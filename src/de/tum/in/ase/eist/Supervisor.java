@@ -1,13 +1,10 @@
 package de.tum.in.ase.eist;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class Supervisor extends Employee {
     private String name;
-    private List<Employee> supervisedEmployee = new List<>() {
+    private LinkedList<Employee> supervisedEmployee = new LinkedList<>() {
         @Override
         public int size() {
             return 0;
@@ -131,7 +128,7 @@ public class Supervisor extends Employee {
 	// TODO 3: Implement listHierarchy() for Supervisor - done
 
     public String getName() {
-        return name;
+        return this.name;
     }
     public void hireEmployee(Employee employee) {
         supervisedEmployee.add(employee);
@@ -146,6 +143,10 @@ public class Supervisor extends Employee {
         }
     }
     public void printName(int level) {
-        System.out.println("-".repeat(level) + name);
+        System.out.println("-".repeat(level) + this.name);
+    }
+
+    public List<Employee> getSupervisedEmployees() {
+        return supervisedEmployee;
     }
 }

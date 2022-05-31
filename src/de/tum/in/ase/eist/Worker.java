@@ -13,9 +13,9 @@ public class Worker extends Employee {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
     public void printName(int level) {
-        System.out.println("-".repeat(level) + name);
+        System.out.println("-".repeat(level) + this.name);
     }
 }
