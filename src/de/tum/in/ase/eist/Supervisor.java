@@ -142,7 +142,7 @@ public class Supervisor extends Employee {
     public void listHierarchy(int level) {
         printName(level);
         for (Employee employee : employeeList) {
-            listHierarchy(level + 1);
+            employee.listHierarchy(level + 1);
         }
     }
     public void printName(int level) {
