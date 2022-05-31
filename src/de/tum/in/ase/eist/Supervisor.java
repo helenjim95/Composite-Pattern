@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Supervisor extends Employee {
     private String name;
-    private LinkedList<Employee> supervisedEmployees;
+    private List<Employee> supervisedEmployees;
 
 	// TODO 2: Implement the Supervisor class - done
     public Supervisor(String name) {
@@ -24,19 +24,15 @@ public class Supervisor extends Employee {
     }
     public void listHierarchy(int level) {
         printName(level);
-        try {
-            for (Employee employee : supervisedEmployees) {
-                employee.listHierarchy(level + 1);
-            }
-        } catch (NullPointerException e){
-            throw new NullPointerException();
-        }
+//        for (Employee employee : supervisedEmployees) {
+//            employee.listHierarchy(level + 1);
+//        }
     }
     public void printName(int level) {
-        System.out.println("-".repeat(level) + this.name);
+        System.out.println("-".repeat(level) + getName());
     }
 
-    public LinkedList<Employee> getSupervisedEmployees() {
+    public List<Employee> getSupervisedEmployees() {
         return supervisedEmployees;
     }
 }
