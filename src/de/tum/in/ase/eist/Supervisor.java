@@ -7,7 +7,7 @@ import java.util.ListIterator;
 
 public class Supervisor extends Employee {
     private String name;
-    private List<Employee> employeeList = new List<>() {
+    private List<Employee> supervisedEmployee = new List<>() {
         @Override
         public int size() {
             return 0;
@@ -134,14 +134,14 @@ public class Supervisor extends Employee {
         return name;
     }
     public void hireEmployee(Employee employee) {
-        employeeList.add(employee);
+        supervisedEmployee.add(employee);
     }
     public void fireEmployee(Employee employee) {
-        employeeList.remove(employee);
+        supervisedEmployee.remove(employee);
     }
     public void listHierarchy(int level) {
         printName(level);
-        for (Employee employee : employeeList) {
+        for (Employee employee : supervisedEmployee) {
             employee.listHierarchy(level + 1);
         }
     }
