@@ -32,7 +32,7 @@ public abstract class Employee {
 	 * @param level current hierarchy level of this employee
 	 * @return a prefix visualizing the current hierarchy level
 	 */
-	private String getLevelPrefix(int level) {
+	private static String getLevelPrefix(int level) {
 		return "-".repeat(level);
 	}
 }
