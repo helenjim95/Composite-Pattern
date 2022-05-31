@@ -4,126 +4,12 @@ import java.util.*;
 
 public class Supervisor extends Employee {
     private String name;
-    private LinkedList<Employee> supervisedEmployee = new LinkedList<>() {
-        @Override
-        public int size() {
-            return 0;
-        }
-
-        @Override
-        public boolean isEmpty() {
-            return false;
-        }
-
-        @Override
-        public boolean contains(Object o) {
-            return false;
-        }
-
-        @Override
-        public Iterator<Employee> iterator() {
-            return null;
-        }
-
-        @Override
-        public Object[] toArray() {
-            return new Object[0];
-        }
-
-        @Override
-        public <T> T[] toArray(T[] a) {
-            return null;
-        }
-
-        @Override
-        public boolean add(Employee employee) {
-            return false;
-        }
-
-        @Override
-        public boolean remove(Object o) {
-            return false;
-        }
-
-        @Override
-        public boolean containsAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public boolean addAll(Collection<? extends Employee> c) {
-            return false;
-        }
-
-        @Override
-        public boolean addAll(int index, Collection<? extends Employee> c) {
-            return false;
-        }
-
-        @Override
-        public boolean removeAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public boolean retainAll(Collection<?> c) {
-            return false;
-        }
-
-        @Override
-        public void clear() {
-
-        }
-
-        @Override
-        public Employee get(int index) {
-            return null;
-        }
-
-        @Override
-        public Employee set(int index, Employee element) {
-            return null;
-        }
-
-        @Override
-        public void add(int index, Employee element) {
-
-        }
-
-        @Override
-        public Employee remove(int index) {
-            return null;
-        }
-
-        @Override
-        public int indexOf(Object o) {
-            return 0;
-        }
-
-        @Override
-        public int lastIndexOf(Object o) {
-            return 0;
-        }
-
-        @Override
-        public ListIterator<Employee> listIterator() {
-            return null;
-        }
-
-        @Override
-        public ListIterator<Employee> listIterator(int index) {
-            return null;
-        }
-
-        @Override
-        public List<Employee> subList(int fromIndex, int toIndex) {
-            return null;
-        }
-    };
+    private LinkedList<Employee> supervisedEmployees;
 
 	// TODO 2: Implement the Supervisor class - done
     public Supervisor(String name) {
         super(name);
+        supervisedEmployees = new LinkedList<>();
     }
 	// TODO 3: Implement listHierarchy() for Supervisor - done
 
@@ -131,22 +17,26 @@ public class Supervisor extends Employee {
         return this.name;
     }
     public void hireEmployee(Employee employee) {
-        supervisedEmployee.add(employee);
+        supervisedEmployees.add(employee);
     }
     public void fireEmployee(Employee employee) {
-        supervisedEmployee.remove(employee);
+        supervisedEmployees.remove(employee);
     }
     public void listHierarchy(int level) {
         printName(level);
-        for (Employee employee : supervisedEmployee) {
-            employee.listHierarchy(level + 1);
+        try {
+            for (Employee employee : supervisedEmployees) {
+                employee.listHierarchy(level + 1);
+            }
+        } catch (NullPointerException e){
+            throw new NullPointerException();
         }
     }
     public void printName(int level) {
         System.out.println("-".repeat(level) + this.name);
     }
 
-    public List<Employee> getSupervisedEmployees() {
-        return supervisedEmployee;
+    public LinkedList<Employee> getSupervisedEmployees() {
+        return supervisedEmployees;
     }
 }
