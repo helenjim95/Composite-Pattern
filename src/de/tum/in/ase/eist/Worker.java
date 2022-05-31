@@ -6,6 +6,7 @@ public class Worker extends Employee {
 	// TODO 1: Implement the Worker class - done
     public Worker(String name) {
         super(name);
+        this.name = name;
     }
 	// TODO 3: Implement listHierarchy() for Worker - done
     public void listHierarchy(int level) {

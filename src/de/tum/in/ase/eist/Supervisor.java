@@ -9,6 +9,7 @@ public class Supervisor extends Employee {
 	// TODO 2: Implement the Supervisor class - done
     public Supervisor(String name) {
         super(name);
+        this.name = name;
         supervisedEmployees = new LinkedList<>();
     }
 	// TODO 3: Implement listHierarchy() for Supervisor - done
@@ -24,9 +25,9 @@ public class Supervisor extends Employee {
     }
     public void listHierarchy(int level) {
         printName(level);
-//        for (Employee employee : supervisedEmployees) {
-//            employee.listHierarchy(level + 1);
-//        }
+        for (Employee employee : supervisedEmployees) {
+            employee.listHierarchy(level + 1);
+        }
     }
     public void printName(int level) {
         System.out.println("-".repeat(level) + getName());

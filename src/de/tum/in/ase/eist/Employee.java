@@ -25,7 +25,7 @@ public abstract class Employee {
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	/**
