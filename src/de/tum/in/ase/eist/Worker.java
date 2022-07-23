@@ -1,14 +1,16 @@
 package de.tum.in.ase.eist;
 
+// TODO: Simple component class extends component superclass
 public class Worker extends Employee {
     private String name;
 
-	// TODO 1: Implement the Worker class - done
+	// TODO: 1: Implement the Worker class - super fields from the superclass
     public Worker(String name) {
         super(name);
         this.name = name;
     }
-	// TODO 3: Implement listHierarchy() for Worker - done
+
+	// TODO: 3: Implement methods and override
     public void listHierarchy(int level) {
         printName(level);
     }

@@ -2,17 +2,18 @@ package de.tum.in.ase.eist;
 
 import java.util.*;
 
+// TODO: Container class representing complex components.
 public class Supervisor extends Employee {
     private String name;
-    private List<Employee> supervisedEmployees;
+//    TODO: Declare array field to store references to sub-components. List of component class type
+    private List<Employee> supervisedEmployees =  new LinkedList<>();
 
-	// TODO 2: Implement the Supervisor class - done
+	// TODO: 2: Implement the Supervisor class
     public Supervisor(String name) {
         super(name);
-        this.name = name;
-        supervisedEmployees = new LinkedList<>();
     }
-	// TODO 3: Implement listHierarchy() for Supervisor - done
+
+    // TODO 3: delegate method calls to sub-components
 
     public String getName() {
         return this.name;

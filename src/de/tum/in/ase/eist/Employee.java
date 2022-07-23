@@ -1,8 +1,10 @@
 package de.tum.in.ase.eist;
 
+// TODO: component interface for simple/complex component type
 public abstract class Employee {
 
 	private final String name;
+
 
 	public Employee(String name) {
 		this.name = name;
