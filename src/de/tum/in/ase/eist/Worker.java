@@ -2,7 +2,6 @@ package de.tum.in.ase.eist;
 
 // TODO: Simple component class extends component superclass
 public class Worker extends Employee {
-    private String name;
 
 	// TODO: 1: Implement the Worker class - super fields from the superclass
     public Worker(String name) {
@@ -14,10 +13,4 @@ public class Worker extends Employee {
         printName(level);
     }
 
-    public String getName() {
-        return this.name;
-    }
-    public void printName(int level) {
-        System.out.println("-".repeat(level) + this.name);
-    }
 }
