@@ -7,7 +7,6 @@ public class Worker extends Employee {
 	// TODO: 1: Implement the Worker class - super fields from the superclass
     public Worker(String name) {
         super(name);
-        this.name = name;
     }
 
 	// TODO: 3: Implement methods and override

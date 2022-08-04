@@ -6,11 +6,12 @@ import java.util.*;
 public class Supervisor extends Employee {
     private String name;
 //    TODO: Declare array field to store references to sub-components. List of component class type
-    private List<Employee> supervisedEmployees =  new LinkedList<>();
+    private List<Employee> supervisedEmployees;
 
 	// TODO: 2: Implement the Supervisor class
     public Supervisor(String name) {
         super(name);
+        this.supervisedEmployees = new ArrayList<>();
     }
 
     // TODO 3: delegate method calls to sub-components
@@ -19,10 +20,10 @@ public class Supervisor extends Employee {
         return this.name;
     }
     public void hireEmployee(Employee employee) {
-        supervisedEmployees.add(employee);
+        this.supervisedEmployees.add(employee);
     }
     public void fireEmployee(Employee employee) {
-        supervisedEmployees.remove(employee);
+        this.supervisedEmployees.remove(employee);
     }
     public void listHierarchy(int level) {
         printName(level);
@@ -35,6 +36,6 @@ public class Supervisor extends Employee {
     }
 
     public List<Employee> getSupervisedEmployees() {
-        return supervisedEmployees;
+        return this.supervisedEmployees;
     }
 }
